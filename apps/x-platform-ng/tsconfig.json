@@ -10,7 +10,23 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "emitDecoratorMetadata": false,
-    "module": "preserve"
+    "module": "preserve",
+    "paths": {
+      "@components": ["apps/x-platform-ng/src/app/components/index"],
+      "@components/*": ["apps/x-platform-ng/src/app/components/*"],
+      "@core": ["apps/x-platform-ng/src/app/core/index"],
+      "@core/*": ["apps/x-platform-ng/src/app/core/*"],
+      "@data": ["apps/x-platform-ng/src/app/data/index"],
+      "@data/*": ["apps/x-platform-ng/src/app/data/*"],
+      "@model": ["apps/x-platform-ng/src/app/model/index"],
+      "@model/*": ["apps/x-platform-ng/src/app/model/*"],
+      "@pages": ["apps/x-platform-ng/src/app/pages/index"],
+      "@pages/*": ["apps/x-platform-ng/src/app/pages/*"],
+      "@routes": ["apps/x-platform-ng/src/app/routes/index"],
+      "@routes/*": ["apps/x-platform-ng/src/app/routes/*"],
+      "@shared": ["apps/x-platform-ng/src/app/shared/index"],
+      "@shared/*": ["apps/x-platform-ng/src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
