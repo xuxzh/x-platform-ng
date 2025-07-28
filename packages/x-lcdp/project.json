@@ -1,0 +1,36 @@
+{
+  "name": "x-lcdp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/x-lcdp",
+  "prefix": "xz",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "packages/x-lcdp/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/x-lcdp/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/x-lcdp/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/x-lcdp/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
