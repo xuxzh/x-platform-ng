@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nx run x-platform-ng:serve",
     "build:base": "nx run x-base:build",
-    "build:lcdp": "nx run x-lcdp:build"
+    "build:lcdp": "nx run x-lcdp:build",
+    "build:utils": "nx run x-utils:build"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +26,10 @@
     "@nx/eslint": "21.3.5",
     "@nx/eslint-plugin": "21.3.5",
     "@nx/jest": "21.3.5",
-    "@nx/js": "21.3.5",
+    "@nx/js": "21.3.7",
     "@nx/playwright": "21.3.5",
-    "@nx/web": "21.3.5",
+    "@nx/vite": "^21.3.7",
+    "@nx/web": "21.3.7",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~20.1.0",
     "@swc-node/register": "~1.9.1",
@@ -36,6 +38,7 @@
     "@types/jest": "^30.0.0",
     "@types/node": "18.16.9",
     "@typescript-eslint/utils": "^8.29.0",
+    "@vitest/ui": "^3.0.0",
     "angular-eslint": "^20.0.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^9.8.0",
@@ -43,8 +46,10 @@
     "eslint-plugin-playwright": "^1.6.2",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
+    "jest-environment-node": "^30.0.2",
     "jest-preset-angular": "~15.0.0",
     "jest-util": "^30.0.2",
+    "jiti": "2.4.2",
     "jsonc-eslint-parser": "^2.1.0",
     "less": "^4.3.0",
     "ng-packagr": "~20.1.0",
@@ -58,7 +63,10 @@
     "tslib": "^2.3.0",
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.29.0",
-    "verdaccio": "^6.0.5"
+    "verdaccio": "^6.0.5",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "~4.5.0",
+    "vitest": "^3.0.0"
   },
   "dependencies": {
     "@angular/common": "~20.1.0",

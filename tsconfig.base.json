@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "x-base": ["packages/x-base/src/index.ts"],
-      "x-lcdp": ["packages/x-lcdp/src/index.ts"]
+      "x-lcdp": ["packages/x-lcdp/src/index.ts"],
+      "x-utils": ["packages/x-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
