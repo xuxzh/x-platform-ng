@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nx run x-platform-ng:serve",
+    "build:utils": "nx run x-utils:build",
     "build:base": "nx run x-base:build",
-    "build:lcdp": "nx run x-lcdp:build",
-    "build:utils": "nx run x-utils:build"
+    "build:ui": "nx run x-ui:build",
+    "build:lcdp": "nx run x-lcdp:build"
   },
   "keywords": [],
   "author": "",
