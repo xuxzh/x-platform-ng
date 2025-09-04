@@ -12,6 +12,10 @@
     "emitDecoratorMetadata": false,
     "module": "preserve",
     "paths": {
+      "x-utils/*": ["packages/x-utils/*"],
+      "x-base/*": ["packages/x-base/*"],
+      "x-lcdp/*": ["packages/x-lcdp/*"],
+      "x-ui/*": ["packages/x-ui/*"],
       "@components": ["apps/x-platform-ng/src/app/components/index"],
       "@components/*": ["apps/x-platform-ng/src/app/components/*"],
       "@core": ["apps/x-platform-ng/src/app/core/index"],
