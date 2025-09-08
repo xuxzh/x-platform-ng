@@ -7,7 +7,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { XzNodeSchema } from 'x-lcdp/model';
-import { XzSharedService } from '../services';
+import { XzDesignService } from '../services';
 import { XzSafeAny } from 'x-base/model';
 
 @Directive({
@@ -17,7 +17,7 @@ export class XzDesignRenderDirective {
   xzSchema = input.required<XzNodeSchema>();
 
   containerRef = inject(ViewContainerRef);
-  sharedSer = inject(XzSharedService);
+  designSer = inject(XzDesignService);
 
   constructor() {
     effect(() => {
@@ -28,7 +28,7 @@ export class XzDesignRenderDirective {
 
   render(schema: XzNodeSchema) {
     this.containerRef.clear();
-    const targetComp = this.sharedSer?.getTargetComponent(schema.compCode);
+    const targetComp = this.designSer?.getTargetComponent(schema.compCode);
     if (!schema?.compCode || !targetComp) {
       console.error(`该模型${schema.compCode}没有关联组件实例，渲染已终止!`);
       return;

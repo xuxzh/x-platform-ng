@@ -23,6 +23,8 @@ export interface XzComponentGroupConfig extends XzExpand, XzSelectOption {
 export interface XzComponentConfig extends XzSelectOption {
   /** 对应组件 */
   component: Type<XzSafeAny> | null;
+  compType: 'container' | 'general' | 'input';
+  resourceType: 'component' | 'template';
   registration?: RhComponentRegistration;
 }
 

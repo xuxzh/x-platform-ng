@@ -1,1 +1,2 @@
-export * from './node-schema.model';
+export * from './history.model';
+export * from './schema.model';

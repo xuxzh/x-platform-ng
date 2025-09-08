@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "x-base": ["packages/x-base/src/index.ts"],
-      "x-lcdp": ["packages/x-lcdp/src/index.ts"],
-      "x-ui": ["packages/x-ui/src/index.ts"],
-      "x-utils": ["packages/x-utils/src/index.ts"]
+      "x-base/*": ["packages/x-base/src/*"],
+      "x-lcdp/*": ["packages/x-lcdp/src/*"],
+      "x-ui/*": ["packages/x-ui/src/*"],
+      "x-utils/*": ["packages/x-utils/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

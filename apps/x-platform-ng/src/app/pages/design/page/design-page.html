@@ -1,11 +1,20 @@
 <div class="size-full flex flex-col">
-  <div class="flex-none h-24"></div>
+  <div class="flex-none h-24">
+    <nz-icon nzType="play-circle"></nz-icon>
+    <nz-icon nzType="clear"></nz-icon>
+  </div>
   <div class="flex-auto h-48 flex flex-row">
     <div class="flex-none w-48">
       <!-- 组件池 -->
+      <xz-component-pool></xz-component-pool>
     </div>
-    <div class="flex-auto w-48 bg-orange-300">
-      <xz-container-wrapper [rhDatasource]="pageSchema"> </xz-container-wrapper>
+    <div class="flex-auto w-48 border border-gray-200">
+      <xz-container-wrapper
+        class="block size-full"
+        [rhDatasource]="pageSchema()"
+      >
+      </xz-container-wrapper>
+      <!-- <xz-div [rhNodeSchema]="pageSchema()"> </xz-div> -->
     </div>
     <div class="flex-none w-48"></div>
   </div>
