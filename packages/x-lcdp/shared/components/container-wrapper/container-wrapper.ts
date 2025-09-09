@@ -56,6 +56,10 @@ export class XzContainerWrapper
     return `${this.class()} min-h-24 p-1`;
   });
 
+  childDatas = computed(() => {
+    return this.rhDatasource().children;
+  });
+
   constructor() {
     super();
     effect(() => {

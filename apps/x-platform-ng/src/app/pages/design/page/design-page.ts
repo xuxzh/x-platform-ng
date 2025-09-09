@@ -1,8 +1,10 @@
 import {
+  AfterViewInit,
   Component,
   computed,
   effect,
   inject,
+  OnInit,
   viewChildren,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +13,7 @@ import {
   XzHistoryService,
   XzSharedService,
 } from 'x-lcdp/shared';
-import { XzNodeSchema } from 'x-lcdp/model';
+import { XzNodeSchema, XzPageContaienr } from 'x-lcdp/model';
 import { XzComponentPool } from 'x-lcdp/design';
 import { XzDragDropDirective, XzDragDropService } from 'x-lcdp/core';
 import {
@@ -25,6 +27,8 @@ import { XzDesignService } from 'x-lcdp/shared';
 import { getDefaultPageSchema } from 'x-lcdp/data';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import localForage from 'localforage';
+import { cloneDeep } from 'lodash-es';
 
 @Component({
   selector: 'app-design-page',
@@ -45,15 +49,32 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     XzHistoryService,
   ],
 })
-export class DesignPage {
+export class DesignPage implements AfterViewInit {
   designService = inject(XzDesignService);
   pageSchema = computed(() => {
-    return this.designService.pageSchema();
-    // const childrenDatas = this.designService.pageSchema().children;
-    // return childrenDatas?.[0] || ({} as XzNodeSchema);
+    const schema = this.designService.pageSchema();
+    return schema;
   });
 
   constructor() {
-    this.designService.initPageContainer(getDefaultPageSchema());
+    localForage.getItem('pageSchema').then((pageSchema) => {
+      this.designService.initPageContainer(
+        (pageSchema as XzPageContaienr) || getDefaultPageSchema()
+      );
+    });
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.pageSchema());
+  }
+
+  save() {
+    localForage.setItem('pageSchema', this.designService.pageContainer());
+  }
+
+  clear() {
+    localForage.removeItem('pageSchema').then(() => {
+      this.designService.initPageContainer(getDefaultPageSchema());
+    });
   }
 }

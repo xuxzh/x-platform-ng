@@ -1,7 +1,14 @@
 <div class="size-full flex flex-col">
   <div class="flex-none h-24">
-    <nz-icon nzType="play-circle"></nz-icon>
-    <nz-icon nzType="clear"></nz-icon>
+    <button nz-button nzType="link" type="button">
+      <nz-icon nzType="play-circle"></nz-icon>
+    </button>
+    <button nz-button nzType="link" type="button" nzDanger (click)="clear()">
+      <nz-icon nzType="clear"></nz-icon>
+    </button>
+    <button nz-button nzType="link" type="button" (click)="save()">
+      <nz-icon nzType="save"></nz-icon>
+    </button>
   </div>
   <div class="flex-auto h-48 flex flex-row">
     <div class="flex-none w-48">

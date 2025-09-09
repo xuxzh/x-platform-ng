@@ -1,4 +1,4 @@
-@for(item of rhDatasource().children;track item.key){
+@for(item of childDatas();track item.key){
 <div
   cdkDrag
   [cdkDragData]="item"
@@ -7,5 +7,4 @@
 >
   <ng-container xzDesignRender [xzSchema]="item"> </ng-container>
 </div>
-
 }
