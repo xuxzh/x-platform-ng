@@ -1,6 +1,10 @@
 import { Component, computed, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { XZ_DESIGN_COMPONENT_CONFIG, XzDragDropService } from 'x-lcdp/core';
+import {
+  XZ_DESIGN_COMPONENT_CONFIG,
+  XzComponentConfig,
+  XzDragDropService,
+} from 'x-lcdp/core';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import {
   CdkDragMove,
@@ -27,5 +31,13 @@ export class XzComponentPool implements OnInit {
 
   ngOnInit() {
     console.log(this.componentDatas);
+  }
+
+  dragMoved(event: CdkDragMove<XzComponentConfig>) {
+    this.dragDropSer?.dragMoved(event);
+  }
+
+  dragReleased(event: CdkDragRelease) {
+    this.dragDropSer?.dragReleased(event);
   }
 }

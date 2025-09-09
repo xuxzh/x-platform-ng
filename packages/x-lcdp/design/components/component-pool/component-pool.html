@@ -12,6 +12,8 @@
         <div
           cdkDrag
           [cdkDragData]="item"
+          (cdkDragMoved)="dragMoved($event)"
+          (cdkDragReleased)="dragReleased($event)"
           class="border border-gray-300 cursor-pointer"
         >
           {{item.name}}

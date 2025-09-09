@@ -16,16 +16,17 @@ export class XzSharedService {
    * @description 全量page schema json
    */
   pageContainer = signal<XzPageContaienr>(getDefaultPageSchema(), {
-    equal: (a, b) => {
-      if (a === b) {
+    equal: (pre, cur) => {
+      if (pre === cur) {
         console.warn('更新json没有更新引用,可能导致保存变更检测失效！');
       }
-      const diff = jsondiffpatch.diff(a, b);
+      const diff = jsondiffpatch.diff(pre, cur);
       const isEqual = !diff;
 
       if (!this.disableHistoryRecord) {
+        console.log('更新json', cur);
         this.historySer?.push({
-          content: b,
+          content: cur,
           delta: diff,
         });
       }
